@@ -1,0 +1,56 @@
+/*Configure the tab buttons*/
+.charsheet .sheet-main,
+.charsheet .sheet-tab-two,
+.charsheet .sheet-tab-three {
+    display: none;
+}
+
+/* show the selected tab */
+.charsheet .sheet-tabstoggle[value="main"] ~ div.sheet-main,
+.charsheet .sheet-tabstoggle[value="tab-two"] ~ div.sheet-tab-two,
+.charsheet .sheet-tabstoggle[value="tab-three"] ~ div.sheet-tab-three {
+    display: block;
+}
+
+
+
+.sheet-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    justify-content: center;
+}
+
+
+
+.charsheet .sheet-main-section{
+    display: grid;
+    grid-template-columns: 33% 33% 34%;
+    grid-template-rows:  60px 60px 150px 150px;
+    grid-template-areas:"header  header header "
+                        "info    info  info  "
+                        "attributes  hp weapon ";
+    grid-gap: 5px;
+  }
+
+  .charsheet div.sheet-block{
+    display: grid;
+    justify-content: center;
+    padding: 5px;
+    border: 3px solid black;
+  }
+
+  .charsheet div.sheet-main-header{
+    grid-area: header;
+  }
+  .charsheet div.sheet-main-info{
+    grid-area: info;
+  }
+  .charsheet div.sheet-main-attributes{
+    grid-area: attributes;
+  }
+  .charsheet div.sheet-main-HP{
+    grid-area: hp;
+  }
+  .charsheet div.sheet-main-weapon{
+    grid-area: weapon;
+  }

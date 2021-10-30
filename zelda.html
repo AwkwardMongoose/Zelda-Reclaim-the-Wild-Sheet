@@ -1,0 +1,59 @@
+<link href="zelda.css" rel="stylesheet">
+
+<input type="hidden" class="sheet-tabstoggle" name="attr_sheetTab"  value="main"  />
+<div class="sheet-tabs">
+    <button type="action" name="act_main" >Main</button>
+    <button type="action" name="act_tab-two" >Tab 2</button>
+    <button type="action" name="act_tab-three" >Tab 3</button>
+</div>
+
+<!-- MAIN TAB BEGINS -->
+
+<div class="sheet-main">
+    <div class="sheet-main-section">
+        <div class="sheet-main-header sheet-block">
+            <h2>Main</h2>
+        </div>
+        <div class="sheet-main-info sheet-block">
+            INFO
+        </div>
+    
+        <div class="sheet-main-attributes sheet-block">
+            ATTRIBUTES
+        </div>
+    
+        <div class="sheet-main-HP sheet-block">
+            HP
+        </div>
+
+        <div class="sheet-main-weapon sheet-block">
+            Weapon
+        </div>
+    </div>
+</div>
+
+    
+<!-- TAB ONE ENDS -->
+<!-- TAB TWO BEGINS -->
+<div class="sheet-tab-two">
+    <h2>Tab 2</h2>
+</div>
+
+<!-- TAB TWO ENDS -->
+<!-- TAB THREE BEGINS -->
+
+<div class="sheet-tab-three">
+    <h2>Tab 3</h2>
+</div>
+
+<script type="text/worker">
+    const buttonlist = ["main","tab-two","tab-three"];
+    buttonlist.forEach(button => {
+        on(`clicked:${button}`, function() {
+            setAttrs({
+                sheetTab: button
+            });
+            console.log(button)
+        });
+    });
+</script>
